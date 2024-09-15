@@ -11,6 +11,7 @@ import {
   Button,
   Avatar,
   Tooltip,
+  Badge,
 } from "antd";
 import Donat from "./components/charts/Donat";
 import Bars from "./components/charts/Bars";
@@ -65,6 +66,10 @@ const actions2: React.ReactNode[] = [
   </Flex>,
 ];
 
+const headerStyle: React.CSSProperties = {
+  backgroundColor: 'white',
+};
+
 const Home: React.FC = () => {
   const [dosesByDay, setDosesByDay] = useState(null);
   const [error, setError] = useState(null);
@@ -82,13 +87,13 @@ const Home: React.FC = () => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Header>Header</Header>
+      <Header style={headerStyle} className="shadow-lg"><h1>App title</h1></Header>
       <Flex style={{ margin: '1rem 10px'}}>
         <h2>Page title</h2>
         <Space style={{ marginLeft: "auto" }}>
           <Button icon={<UploadOutlined />} iconPosition='end'>Export PDF</Button>
-          <Button icon={<AlignRightOutlined />} iconPosition='end'><i>(3)</i> Notes</Button>
-          <Button icon={<FilterOutlined />} iconPosition='end'><i></i> Filter</Button>
+          <Button icon={<AlignRightOutlined />} iconPosition='end'><span>(3)</span> Notes</Button>
+          <Button icon={<FilterOutlined />} iconPosition='end'><Badge color="cyan" count={'9+'} /> Filter</Button>
         </Space>
       </Flex>
       {error ? (
