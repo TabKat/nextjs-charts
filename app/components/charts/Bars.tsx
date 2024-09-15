@@ -17,7 +17,7 @@ const Bars: React.FC<BarsProps> = ({ data, x, y, z }) => {
     const chart = new Chart({
       container: chartRef.current!,
       autoFit: true,
-      height: 300,
+      height: 340,
     });
 
     chart.data(data);

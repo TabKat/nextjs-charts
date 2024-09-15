@@ -41,7 +41,7 @@ const Donat: React.FC<DonatProps> = ({ data, x, y }) => {
     const chart = new Chart({
       container: chartRef.current!, // Use the ref for the container
       autoFit: true,
-      height: 300,
+      height: 340,
     });
 
     chart.data(data);
