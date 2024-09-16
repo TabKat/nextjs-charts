@@ -1,16 +1,10 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from "react";
-import { Chart } from "@antv/g2";
+import React, { useEffect, useRef } from 'react';
+import { Chart } from '@antv/g2';
+import { IBars } from '@/app/types/ui';
 
-interface BarsProps {
-  data: [];
-  x: string;
-  y: string;
-  z: string;
-}
-
-const Bars: React.FC<BarsProps> = ({ data, x, y, z }) => {
+const Bars: React.FC<IBars> = ({ data, x, y, z }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -35,9 +29,9 @@ const Bars: React.FC<BarsProps> = ({ data, x, y, z }) => {
       .interval()
       .position(`${x}*${y}`)
       .color(z)
-      .adjust([{ type: "dodge", marginRatio: 0 }]);
+      .adjust([{ type: 'dodge', marginRatio: 0 }]);
 
-    chart.interaction("element-highlight-by-x");
+    chart.interaction('element-highlight-by-x');
 
     chart.render();
 
